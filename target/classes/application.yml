@@ -1,0 +1,22 @@
+server:
+  port: 8081
+  error:
+    include-message: always
+#Configuracion de spring
+spring:
+  #Configuracion de migracion
+  flyway:
+    enabled: true
+    baselineVersion: 1
+    locations:
+      classpath: db.migration
+    sqlMigrationSuffixes: .sql
+    baselineOnMigrate: true
+    sqlMigrationPrefix: V
+    schemas: public
+
+  datasource:
+    url: postgres://jmlftfll:RRKtapIVsfzChBhbH7neeWv9Wu82rVVM@babar.db.elephantsql.com:5432/jmlftfll?socketTimeout=3
+    username: jmlftfll
+    password: RRKtapIVsfzChBhbH7neeWv9Wu82rVVM
+    driverClassName: org.postgresql.Driver
